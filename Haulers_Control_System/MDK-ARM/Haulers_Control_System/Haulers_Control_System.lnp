@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"haulers_control_system\startup_stm32f103xe.o"
+"haulers_control_system\main.o"
+"haulers_control_system\gpio.o"
+"haulers_control_system\stm32f1xx_it.o"
+"haulers_control_system\stm32f1xx_hal_msp.o"
+"haulers_control_system\stm32f1xx_hal_gpio_ex.o"
+"haulers_control_system\stm32f1xx_hal.o"
+"haulers_control_system\stm32f1xx_hal_rcc.o"
+"haulers_control_system\stm32f1xx_hal_rcc_ex.o"
+"haulers_control_system\stm32f1xx_hal_gpio.o"
+"haulers_control_system\stm32f1xx_hal_dma.o"
+"haulers_control_system\stm32f1xx_hal_cortex.o"
+"haulers_control_system\stm32f1xx_hal_pwr.o"
+"haulers_control_system\stm32f1xx_hal_flash.o"
+"haulers_control_system\stm32f1xx_hal_flash_ex.o"
+"haulers_control_system\stm32f1xx_hal_exti.o"
+"haulers_control_system\system_stm32f1xx.o"
+"haulers_control_system\key.o"
+--strict --scatter "Haulers_Control_System\Haulers_Control_System.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Haulers_Control_System.map" -o Haulers_Control_System\Haulers_Control_System.axf

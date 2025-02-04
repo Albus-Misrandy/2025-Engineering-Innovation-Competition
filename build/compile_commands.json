@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/albus/2025-Engineering-Innovation-Competition/build",
+  "command": "/usr/bin/g++   -I/home/albus/2025-Engineering-Innovation-Competition/Vision_System -isystem /usr/local/include/opencv4  -g   -o CMakeFiles/main.dir/main.cpp.o -c /home/albus/2025-Engineering-Innovation-Competition/Vision_System/main.cpp",
+  "file": "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/main.cpp"
+},
+{
+  "directory": "/home/albus/2025-Engineering-Innovation-Competition/build/Image_Processing",
+  "command": "/usr/bin/g++   -isystem /usr/local/include/opencv4  -g   -o CMakeFiles/Image_Processing.dir/image_processing.cpp.o -c /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/image_processing.cpp",
+  "file": "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/image_processing.cpp"
+}
+]

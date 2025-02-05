@@ -4,3 +4,6 @@
 /home/albus/2025-Engineering-Innovation-Competition/build/Image_Processing/CMakeFiles/rebuild_cache.dir
 /home/albus/2025-Engineering-Innovation-Competition/build/Image_Processing/CMakeFiles/edit_cache.dir
 /home/albus/2025-Engineering-Innovation-Competition/build/Image_Processing/CMakeFiles/Image_Processing.dir
+/home/albus/2025-Engineering-Innovation-Competition/build/Socket_transmit/CMakeFiles/rebuild_cache.dir
+/home/albus/2025-Engineering-Innovation-Competition/build/Socket_transmit/CMakeFiles/edit_cache.dir
+/home/albus/2025-Engineering-Innovation-Competition/build/Socket_transmit/CMakeFiles/Socket_transmit.dir

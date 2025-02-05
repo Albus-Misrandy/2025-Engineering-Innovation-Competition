@@ -17,6 +17,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/albus/2025-Engineering-Innovation-Competition/build/Image_Processing/CMakeFiles/Image_Processing.dir/DependInfo.cmake"
+  "/home/albus/2025-Engineering-Innovation-Competition/build/Socket_transmit/CMakeFiles/Socket_transmit.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

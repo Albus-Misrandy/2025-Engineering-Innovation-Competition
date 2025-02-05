@@ -159,6 +159,9 @@
 		},
 		{
 			"path" : "Image_Processing/CMakeLists.txt"
+		},
+		{
+			"path" : "Socket_transmit/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

@@ -8,5 +8,10 @@
   "directory": "/home/albus/2025-Engineering-Innovation-Competition/build/Image_Processing",
   "command": "/usr/bin/g++   -isystem /usr/local/include/opencv4  -g   -o CMakeFiles/Image_Processing.dir/image_processing.cpp.o -c /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/image_processing.cpp",
   "file": "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/image_processing.cpp"
+},
+{
+  "directory": "/home/albus/2025-Engineering-Innovation-Competition/build/Socket_transmit",
+  "command": "/usr/bin/g++   -isystem /usr/local/include/opencv4  -g   -o CMakeFiles/Socket_transmit.dir/socket_transmit.cpp.o -c /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.cpp",
+  "file": "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.cpp"
 }
 ]

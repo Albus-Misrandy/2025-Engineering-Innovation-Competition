@@ -8,7 +8,8 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -18,7 +19,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						1
+						2
 					]
 				},
 				{
@@ -34,6 +35,20 @@
 					[
 						0
 					]
+				},
+				{
+					"build" : "Socket_transmit",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Socket_transmit",
+					"targetIndexes" : 
+					[
+						1
+					]
 				}
 			],
 			"name" : "Debug",
@@ -43,13 +58,15 @@
 					"directoryIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					],
 					"name" : "Vision_System",
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -63,9 +80,16 @@
 					"projectIndex" : 0
 				},
 				{
+					"directoryIndex" : 2,
+					"id" : "Socket_transmit::@cc57d7cbb7fd7c2bb521",
+					"jsonFile" : "target-Socket_transmit-Debug-d920d47e1fe1d6561c32.json",
+					"name" : "Socket_transmit",
+					"projectIndex" : 0
+				},
+				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-0cc3670390e965ccb2d5.json",
+					"jsonFile" : "target-main-Debug-dbee7703944967c916fe.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}

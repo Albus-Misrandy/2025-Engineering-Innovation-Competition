@@ -12,11 +12,27 @@ iostream
 opencv2/opencv.hpp
 -
 
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.h
+iostream
+-
+opencv2/opencv.hpp
+-
+sys/socket.h
+-
+netinet/in.h
+-
+unistd.h
+-
+vector
+-
+
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/main.cpp
 iostream
 -
 Image_Processing/image_processing.h
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/image_processing.h
+Socket_transmit/socket_transmit.h
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

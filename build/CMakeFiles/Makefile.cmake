@@ -9,6 +9,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/CMakeLists.txt"
   "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/CMakeLists.txt"
+  "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
@@ -49,10 +50,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "Image_Processing/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Socket_transmit/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
   "Image_Processing/CMakeFiles/Image_Processing.dir/DependInfo.cmake"
+  "Socket_transmit/CMakeFiles/Socket_transmit.dir/DependInfo.cmake"
   )

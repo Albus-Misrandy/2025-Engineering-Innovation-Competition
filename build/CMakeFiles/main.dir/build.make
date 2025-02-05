@@ -80,6 +80,7 @@ main_EXTERNAL_OBJECTS =
 main: CMakeFiles/main.dir/main.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: Image_Processing/libImage_Processing.a
+main: Socket_transmit/libSocket_transmit.a
 main: /usr/local/lib/libopencv_highgui.so.4.7.0
 main: /usr/local/lib/libopencv_ml.so.4.7.0
 main: /usr/local/lib/libopencv_objdetect.so.4.7.0

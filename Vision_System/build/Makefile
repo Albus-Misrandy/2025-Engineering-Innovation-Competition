@@ -136,6 +136,19 @@ Image_Processing/fast:
 	$(MAKE) -f Image_Processing/CMakeFiles/Image_Processing.dir/build.make Image_Processing/CMakeFiles/Image_Processing.dir/build
 .PHONY : Image_Processing/fast
 
+#=============================================================================
+# Target rules for targets named Socket_transmit
+
+# Build rule for target.
+Socket_transmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Socket_transmit
+.PHONY : Socket_transmit
+
+# fast build rule for target.
+Socket_transmit/fast:
+	$(MAKE) -f Socket_transmit/CMakeFiles/Socket_transmit.dir/build.make Socket_transmit/CMakeFiles/Socket_transmit.dir/build
+.PHONY : Socket_transmit/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -173,6 +186,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... main"
 	@echo "... Image_Processing"
+	@echo "... Socket_transmit"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

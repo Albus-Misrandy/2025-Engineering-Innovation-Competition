@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSocket_transmit.a  CMakeFiles/Socket_transmit.dir/socket_transmit.cpp.o
+/usr/bin/ranlib libSocket_transmit.a

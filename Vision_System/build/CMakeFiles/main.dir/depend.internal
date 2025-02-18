@@ -3,6 +3,7 @@
 
 CMakeFiles/main.dir/main.cpp.o
  /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Image_Processing/image_processing.h
+ /home/albus/2025-Engineering-Innovation-Competition/Vision_System/QRcode_Target/QRcode.h
  /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.h
  /home/albus/2025-Engineering-Innovation-Competition/Vision_System/main.cpp
  /usr/local/include/opencv4/opencv2/calib3d.hpp

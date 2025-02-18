@@ -5,6 +5,8 @@ find_package(OpenCV REQUIRED)
 
 add_subdirectory(Image_Processing)
 add_subdirectory(Socket_transmit)
+add_subdirectory(QRcode_Target)
+add_subdirectory(Serial_Port)
 
 add_executable(main main.cpp)
 
@@ -13,6 +15,6 @@ target_include_directories(
     PUBLIC ${PROJECT_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS}
 )
 
-target_link_libraries(main Image_Processing Socket_transmit ${OpenCV_LIBS})
+target_link_libraries(main Image_Processing Socket_transmit QRcode_Target Serial_Port ${OpenCV_LIBS})
 
 message(STATUS "Albus Misrandy")

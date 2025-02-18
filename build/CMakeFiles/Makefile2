@@ -56,12 +56,16 @@ CMAKE_BINARY_DIR = /home/albus/2025-Engineering-Innovation-Competition/build
 all: CMakeFiles/main.dir/all
 all: Image_Processing/all
 all: Socket_transmit/all
+all: QRcode_Target/all
+all: Serial_Port/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: Image_Processing/preinstall
 preinstall: Socket_transmit/preinstall
+preinstall: QRcode_Target/preinstall
+preinstall: Serial_Port/preinstall
 
 .PHONY : preinstall
 
@@ -69,6 +73,8 @@ preinstall: Socket_transmit/preinstall
 clean: CMakeFiles/main.dir/clean
 clean: Image_Processing/clean
 clean: Socket_transmit/clean
+clean: QRcode_Target/clean
+clean: Serial_Port/clean
 
 .PHONY : clean
 
@@ -89,6 +95,42 @@ Image_Processing/preinstall:
 Image_Processing/clean: Image_Processing/CMakeFiles/Image_Processing.dir/clean
 
 .PHONY : Image_Processing/clean
+
+#=============================================================================
+# Directory level rules for directory QRcode_Target
+
+# Recursive "all" directory target.
+QRcode_Target/all: QRcode_Target/CMakeFiles/QRcode_Target.dir/all
+
+.PHONY : QRcode_Target/all
+
+# Recursive "preinstall" directory target.
+QRcode_Target/preinstall:
+
+.PHONY : QRcode_Target/preinstall
+
+# Recursive "clean" directory target.
+QRcode_Target/clean: QRcode_Target/CMakeFiles/QRcode_Target.dir/clean
+
+.PHONY : QRcode_Target/clean
+
+#=============================================================================
+# Directory level rules for directory Serial_Port
+
+# Recursive "all" directory target.
+Serial_Port/all: Serial_Port/CMakeFiles/Serial_Port.dir/all
+
+.PHONY : Serial_Port/all
+
+# Recursive "preinstall" directory target.
+Serial_Port/preinstall:
+
+.PHONY : Serial_Port/preinstall
+
+# Recursive "clean" directory target.
+Serial_Port/clean: Serial_Port/CMakeFiles/Serial_Port.dir/clean
+
+.PHONY : Serial_Port/clean
 
 #=============================================================================
 # Directory level rules for directory Socket_transmit
@@ -114,14 +156,16 @@ Socket_transmit/clean: Socket_transmit/CMakeFiles/Socket_transmit.dir/clean
 # All Build rule for target.
 CMakeFiles/main.dir/all: Image_Processing/CMakeFiles/Image_Processing.dir/all
 CMakeFiles/main.dir/all: Socket_transmit/CMakeFiles/Socket_transmit.dir/all
+CMakeFiles/main.dir/all: QRcode_Target/CMakeFiles/QRcode_Target.dir/all
+CMakeFiles/main.dir/all: Serial_Port/CMakeFiles/Serial_Port.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles --progress-num=5,6 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles --progress-num=9,10 "Built target main"
 .PHONY : CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 0
 .PHONY : CMakeFiles/main.dir/rule
@@ -170,7 +214,7 @@ Image_Processing/CMakeFiles/Image_Processing.dir/clean:
 Socket_transmit/CMakeFiles/Socket_transmit.dir/all:
 	$(MAKE) -f Socket_transmit/CMakeFiles/Socket_transmit.dir/build.make Socket_transmit/CMakeFiles/Socket_transmit.dir/depend
 	$(MAKE) -f Socket_transmit/CMakeFiles/Socket_transmit.dir/build.make Socket_transmit/CMakeFiles/Socket_transmit.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles --progress-num=3,4 "Built target Socket_transmit"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles --progress-num=7,8 "Built target Socket_transmit"
 .PHONY : Socket_transmit/CMakeFiles/Socket_transmit.dir/all
 
 # Build rule for subdir invocation for target.
@@ -189,6 +233,60 @@ Socket_transmit: Socket_transmit/CMakeFiles/Socket_transmit.dir/rule
 Socket_transmit/CMakeFiles/Socket_transmit.dir/clean:
 	$(MAKE) -f Socket_transmit/CMakeFiles/Socket_transmit.dir/build.make Socket_transmit/CMakeFiles/Socket_transmit.dir/clean
 .PHONY : Socket_transmit/CMakeFiles/Socket_transmit.dir/clean
+
+#=============================================================================
+# Target rules for target QRcode_Target/CMakeFiles/QRcode_Target.dir
+
+# All Build rule for target.
+QRcode_Target/CMakeFiles/QRcode_Target.dir/all:
+	$(MAKE) -f QRcode_Target/CMakeFiles/QRcode_Target.dir/build.make QRcode_Target/CMakeFiles/QRcode_Target.dir/depend
+	$(MAKE) -f QRcode_Target/CMakeFiles/QRcode_Target.dir/build.make QRcode_Target/CMakeFiles/QRcode_Target.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles --progress-num=3,4 "Built target QRcode_Target"
+.PHONY : QRcode_Target/CMakeFiles/QRcode_Target.dir/all
+
+# Build rule for subdir invocation for target.
+QRcode_Target/CMakeFiles/QRcode_Target.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 QRcode_Target/CMakeFiles/QRcode_Target.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 0
+.PHONY : QRcode_Target/CMakeFiles/QRcode_Target.dir/rule
+
+# Convenience name for target.
+QRcode_Target: QRcode_Target/CMakeFiles/QRcode_Target.dir/rule
+
+.PHONY : QRcode_Target
+
+# clean rule for target.
+QRcode_Target/CMakeFiles/QRcode_Target.dir/clean:
+	$(MAKE) -f QRcode_Target/CMakeFiles/QRcode_Target.dir/build.make QRcode_Target/CMakeFiles/QRcode_Target.dir/clean
+.PHONY : QRcode_Target/CMakeFiles/QRcode_Target.dir/clean
+
+#=============================================================================
+# Target rules for target Serial_Port/CMakeFiles/Serial_Port.dir
+
+# All Build rule for target.
+Serial_Port/CMakeFiles/Serial_Port.dir/all:
+	$(MAKE) -f Serial_Port/CMakeFiles/Serial_Port.dir/build.make Serial_Port/CMakeFiles/Serial_Port.dir/depend
+	$(MAKE) -f Serial_Port/CMakeFiles/Serial_Port.dir/build.make Serial_Port/CMakeFiles/Serial_Port.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles --progress-num=5,6 "Built target Serial_Port"
+.PHONY : Serial_Port/CMakeFiles/Serial_Port.dir/all
+
+# Build rule for subdir invocation for target.
+Serial_Port/CMakeFiles/Serial_Port.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 Serial_Port/CMakeFiles/Serial_Port.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/albus/2025-Engineering-Innovation-Competition/build/CMakeFiles 0
+.PHONY : Serial_Port/CMakeFiles/Serial_Port.dir/rule
+
+# Convenience name for target.
+Serial_Port: Serial_Port/CMakeFiles/Serial_Port.dir/rule
+
+.PHONY : Serial_Port
+
+# clean rule for target.
+Serial_Port/CMakeFiles/Serial_Port.dir/clean:
+	$(MAKE) -f Serial_Port/CMakeFiles/Serial_Port.dir/build.make Serial_Port/CMakeFiles/Serial_Port.dir/clean
+.PHONY : Serial_Port/CMakeFiles/Serial_Port.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

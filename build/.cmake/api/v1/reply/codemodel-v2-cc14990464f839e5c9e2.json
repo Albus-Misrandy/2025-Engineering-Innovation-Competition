@@ -9,7 +9,9 @@
 					"childIndexes" : 
 					[
 						1,
-						2
+						2,
+						3,
+						4
 					],
 					"minimumCMakeVersion" : 
 					{
@@ -19,7 +21,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						2
+						4
 					]
 				},
 				{
@@ -47,7 +49,35 @@
 					"source" : "Socket_transmit",
 					"targetIndexes" : 
 					[
+						3
+					]
+				},
+				{
+					"build" : "QRcode_Target",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "QRcode_Target",
+					"targetIndexes" : 
+					[
 						1
+					]
+				},
+				{
+					"build" : "Serial_Port",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Serial_Port",
+					"targetIndexes" : 
+					[
+						2
 					]
 				}
 			],
@@ -59,14 +89,18 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3,
+						4
 					],
 					"name" : "Vision_System",
 					"targetIndexes" : 
 					[
 						0,
 						1,
-						2
+						2,
+						3,
+						4
 					]
 				}
 			],
@@ -80,6 +114,20 @@
 					"projectIndex" : 0
 				},
 				{
+					"directoryIndex" : 3,
+					"id" : "QRcode_Target::@562e40c5ca781f547a0b",
+					"jsonFile" : "target-QRcode_Target-Debug-cba56a3ad07b733f46dc.json",
+					"name" : "QRcode_Target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Serial_Port::@741ef103b47ce56e6684",
+					"jsonFile" : "target-Serial_Port-Debug-e0d993b4f881d4796fde.json",
+					"name" : "Serial_Port",
+					"projectIndex" : 0
+				},
+				{
 					"directoryIndex" : 2,
 					"id" : "Socket_transmit::@cc57d7cbb7fd7c2bb521",
 					"jsonFile" : "target-Socket_transmit-Debug-d920d47e1fe1d6561c32.json",
@@ -89,7 +137,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "main::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-main-Debug-dbee7703944967c916fe.json",
+					"jsonFile" : "target-main-Debug-5efe764469544770e431.json",
 					"name" : "main",
 					"projectIndex" : 0
 				}

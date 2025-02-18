@@ -1,0 +1,2 @@
+/usr/bin/ar qc libQRcode_Target.a  CMakeFiles/QRcode_Target.dir/QRcode.cpp.o
+/usr/bin/ranlib libQRcode_Target.a

@@ -55,3 +55,10 @@ vector<Point3f> image_processing::Target_Positioning(Mat process, Mat img)
     }
     return C;
 }
+
+Mat image_processing::QRcode_Processing(Mat img)
+{
+    Mat blur;
+    GaussianBlur(img, blur, Size(5, 5), 0);
+    return blur;
+}

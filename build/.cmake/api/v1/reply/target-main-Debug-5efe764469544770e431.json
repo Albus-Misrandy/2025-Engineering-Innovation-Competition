@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 9,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 16,
+				"line" : 18,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 11,
+				"line" : 13,
 				"parent" : 0
 			}
 		]
@@ -80,6 +80,14 @@
 		{
 			"backtrace" : 2,
 			"id" : "Socket_transmit::@cc57d7cbb7fd7c2bb521"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "QRcode_Target::@562e40c5ca781f547a0b"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "Serial_Port::@741ef103b47ce56e6684"
 		}
 	],
 	"id" : "main::@6890427a1f51a3e7e1df",
@@ -107,6 +115,16 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "Socket_transmit/libSocket_transmit.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "QRcode_Target/libQRcode_Target.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "Serial_Port/libSerial_Port.a",
 				"role" : "libraries"
 			},
 			{

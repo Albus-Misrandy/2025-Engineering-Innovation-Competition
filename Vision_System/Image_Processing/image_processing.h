@@ -16,6 +16,7 @@ class image_processing
     vector<int> Color = {0,19,10,179,255,241};
 
     Mat Target_detect_processing(Mat img);
+    Mat QRcode_Processing(Mat img);
     vector<Point3f> Target_Positioning(Mat process, Mat img);
 };
 

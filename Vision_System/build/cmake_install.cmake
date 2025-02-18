@@ -41,6 +41,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Image_Processing/cmake_install.cmake")
   include("/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Socket_transmit/cmake_install.cmake")
+  include("/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/QRcode_Target/cmake_install.cmake")
+  include("/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Serial_Port/cmake_install.cmake")
 
 endif()
 

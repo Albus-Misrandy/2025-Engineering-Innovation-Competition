@@ -18,6 +18,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Image_Processing/CMakeFiles/Image_Processing.dir/DependInfo.cmake"
   "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Socket_transmit/CMakeFiles/Socket_transmit.dir/DependInfo.cmake"
+  "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/QRcode_Target/CMakeFiles/QRcode_Target.dir/DependInfo.cmake"
+  "/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Serial_Port/CMakeFiles/Serial_Port.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

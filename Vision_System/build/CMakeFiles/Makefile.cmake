@@ -9,6 +9,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "../CMakeLists.txt"
   "../Image_Processing/CMakeLists.txt"
+  "../QRcode_Target/CMakeLists.txt"
+  "../Serial_Port/CMakeLists.txt"
   "../Socket_transmit/CMakeLists.txt"
   "CMakeFiles/3.16.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.16.3/CMakeCXXCompiler.cmake"
@@ -51,6 +53,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "Image_Processing/CMakeFiles/CMakeDirectoryInformation.cmake"
   "Socket_transmit/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "QRcode_Target/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "Serial_Port/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -58,4 +62,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
   "Image_Processing/CMakeFiles/Image_Processing.dir/DependInfo.cmake"
   "Socket_transmit/CMakeFiles/Socket_transmit.dir/DependInfo.cmake"
+  "QRcode_Target/CMakeFiles/QRcode_Target.dir/DependInfo.cmake"
+  "Serial_Port/CMakeFiles/Serial_Port.dir/DependInfo.cmake"
   )

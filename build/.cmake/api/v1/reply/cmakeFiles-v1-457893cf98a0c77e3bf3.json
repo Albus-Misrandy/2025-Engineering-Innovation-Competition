@@ -162,6 +162,12 @@
 		},
 		{
 			"path" : "Socket_transmit/CMakeLists.txt"
+		},
+		{
+			"path" : "QRcode_Target/CMakeLists.txt"
+		},
+		{
+			"path" : "Serial_Port/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",

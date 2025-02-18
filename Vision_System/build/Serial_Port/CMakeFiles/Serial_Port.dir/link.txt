@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSerial_Port.a  CMakeFiles/Serial_Port.dir/UART_port.cpp.o
+/usr/bin/ranlib libSerial_Port.a

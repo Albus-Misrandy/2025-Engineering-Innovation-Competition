@@ -149,6 +149,32 @@ Socket_transmit/fast:
 	$(MAKE) -f Socket_transmit/CMakeFiles/Socket_transmit.dir/build.make Socket_transmit/CMakeFiles/Socket_transmit.dir/build
 .PHONY : Socket_transmit/fast
 
+#=============================================================================
+# Target rules for targets named QRcode_Target
+
+# Build rule for target.
+QRcode_Target: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 QRcode_Target
+.PHONY : QRcode_Target
+
+# fast build rule for target.
+QRcode_Target/fast:
+	$(MAKE) -f QRcode_Target/CMakeFiles/QRcode_Target.dir/build.make QRcode_Target/CMakeFiles/QRcode_Target.dir/build
+.PHONY : QRcode_Target/fast
+
+#=============================================================================
+# Target rules for targets named Serial_Port
+
+# Build rule for target.
+Serial_Port: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Serial_Port
+.PHONY : Serial_Port
+
+# fast build rule for target.
+Serial_Port/fast:
+	$(MAKE) -f Serial_Port/CMakeFiles/Serial_Port.dir/build.make Serial_Port/CMakeFiles/Serial_Port.dir/build
+.PHONY : Serial_Port/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -187,6 +213,8 @@ help:
 	@echo "... main"
 	@echo "... Image_Processing"
 	@echo "... Socket_transmit"
+	@echo "... QRcode_Target"
+	@echo "... Serial_Port"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

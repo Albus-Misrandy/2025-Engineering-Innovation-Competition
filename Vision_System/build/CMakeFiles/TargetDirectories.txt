@@ -7,3 +7,9 @@
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Socket_transmit/CMakeFiles/rebuild_cache.dir
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Socket_transmit/CMakeFiles/edit_cache.dir
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Socket_transmit/CMakeFiles/Socket_transmit.dir
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/QRcode_Target/CMakeFiles/rebuild_cache.dir
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/QRcode_Target/CMakeFiles/edit_cache.dir
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/QRcode_Target/CMakeFiles/QRcode_Target.dir
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Serial_Port/CMakeFiles/rebuild_cache.dir
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Serial_Port/CMakeFiles/edit_cache.dir
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/Serial_Port/CMakeFiles/Serial_Port.dir

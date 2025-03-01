@@ -8,7 +8,7 @@
 using namespace std;
 using namespace cv;
 
-string QRcode_Detecting(Mat img);
+string QRcode_Detecting(Mat img, Mat pre);
 vector<int> extractDigits(string& input);
 
 #endif

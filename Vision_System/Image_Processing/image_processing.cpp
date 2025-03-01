@@ -1,6 +1,26 @@
 #include "image_processing.h"
 
-Mat image_processing::Target_detect_processing(Mat img)
+vector<int> image_processing::Select_Color(int num)
+{
+    vector<int> Color;
+    switch (num)
+    {
+    case 1:
+        Color = Color_red;
+        return Color;
+    case 2:
+        Color = Color_green;
+        return Color;
+    case 3:
+        Color = Color_blue;
+        return Color;
+    default:
+        cout<<"Out of range!"<<endl;
+        break;
+    }
+}
+
+Mat image_processing::Target_detect_processing(Mat img, vector<int> Color)
 {
     // 进行高斯模糊处理
     Mat blur;

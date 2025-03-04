@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "*.tcc": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "iostream": "cpp"
     },
     "cmake.sourceDirectory": "/home/albus/2025-Engineering-Innovation-Competition/Vision_System"
 }

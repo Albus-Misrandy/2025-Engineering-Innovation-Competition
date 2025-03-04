@@ -20,6 +20,12 @@ opencv2/opencv.hpp
 opencv2/objdetect.hpp
 -
 
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Serial_Port/uart_setting.h
+iostream
+-
+boost/asio.hpp
+-
+
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.h
 iostream
 -
@@ -43,6 +49,8 @@ Socket_transmit/socket_transmit.h
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/Socket_transmit/socket_transmit.h
 QRcode_Target/QRcode.h
 /home/albus/2025-Engineering-Innovation-Competition/Vision_System/QRcode_Target/QRcode.h
+Serial_Port/uart_setting.h
+/home/albus/2025-Engineering-Innovation-Competition/Vision_System/Serial_Port/uart_setting.h
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

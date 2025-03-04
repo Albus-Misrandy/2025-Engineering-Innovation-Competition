@@ -23,3 +23,17 @@ void uart_port::uart_send_double(double value)
     memcpy(send_buf, &value, sizeof(double));
     write(*serial, buffer(send_buf, sizeof(double)));
 }
+
+void uart_port::uart_send_int_vector(vector<int> vector_int)
+{
+    int size = vector_int.size();
+    write(*serial, buffer(&size, sizeof(int)));
+    write(*serial, buffer(vector_int.data(), size * sizeof(int)));
+}
+
+int uart_port::uart_receive_int()
+{
+    int receive_data;
+    read(*serial, buffer(reinterpret_cast<char*>(&receive_data), sizeof(int)));
+    return receive_data;
+}

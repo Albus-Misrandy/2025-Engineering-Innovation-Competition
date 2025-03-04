@@ -154,10 +154,10 @@ Socket_transmit/clean: Socket_transmit/CMakeFiles/Socket_transmit.dir/clean
 # Target rules for target CMakeFiles/main.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all: Image_Processing/CMakeFiles/Image_Processing.dir/all
 CMakeFiles/main.dir/all: Socket_transmit/CMakeFiles/Socket_transmit.dir/all
 CMakeFiles/main.dir/all: QRcode_Target/CMakeFiles/QRcode_Target.dir/all
 CMakeFiles/main.dir/all: Serial_Port/CMakeFiles/Serial_Port.dir/all
+CMakeFiles/main.dir/all: Image_Processing/CMakeFiles/Image_Processing.dir/all
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/albus/2025-Engineering-Innovation-Competition/Vision_System/build/CMakeFiles --progress-num=9,10 "Built target main"

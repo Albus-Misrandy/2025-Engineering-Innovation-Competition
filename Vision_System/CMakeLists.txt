@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(Vision_System)
 
 find_package(OpenCV REQUIRED)
+find_package(Threads REQUIRED)
 
 add_subdirectory(Image_Processing)
 add_subdirectory(Socket_transmit)
@@ -15,6 +16,6 @@ target_include_directories(
     PUBLIC ${PROJECT_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS}
 )
 
-target_link_libraries(main Image_Processing Socket_transmit QRcode_Target Serial_Port ${OpenCV_LIBS})
+target_link_libraries(main Image_Processing Socket_transmit QRcode_Target Serial_Port Threads::Threads ${OpenCV_LIBS})
 
 message(STATUS "Albus Misrandy")

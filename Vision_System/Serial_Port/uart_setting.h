@@ -15,6 +15,8 @@ public:
     void uart_setting_init();
     void uart_send_int(int value);
     void uart_send_double(double value);
+    void uart_send_int_vector(vector<int> vector_int);
+    int uart_receive_int();
 };
 
 

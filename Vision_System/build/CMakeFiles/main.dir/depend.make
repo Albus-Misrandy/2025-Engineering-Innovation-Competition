@@ -3,6 +3,7 @@
 
 CMakeFiles/main.dir/main.cpp.o: ../Image_Processing/image_processing.h
 CMakeFiles/main.dir/main.cpp.o: ../QRcode_Target/QRcode.h
+CMakeFiles/main.dir/main.cpp.o: ../Serial_Port/uart_setting.h
 CMakeFiles/main.dir/main.cpp.o: ../Socket_transmit/socket_transmit.h
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
 CMakeFiles/main.dir/main.cpp.o: /usr/local/include/opencv4/opencv2/calib3d.hpp

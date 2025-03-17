@@ -18,11 +18,21 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "can.h"
+#include "i2c.h"
+#include "tim.h"
+#include "usart.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Key.h"
+#include "Brushed_Motor.h"
+#include "Serial_Port.h"
+#include "DM_Motor.h"
+#include "Servo.h"
+#include "OledScreen.h"
+#include "chassis.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +53,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint8_t K1 = 0;
+int16_t encoder_count[4] = {0, 0, 0, 0};
+float Deg_1 = 0;
+float Deg_2 = 0;
+float Deg_3 = 0;
+float Deg_4 = 0;
+
+int32_t time_ms = 0;
+float DM_motor_rad = 0;
+uint8_t KeyNumber = 2;
+uint8_t serial_num;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -54,6 +73,135 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (htim==&htim4)
+  {
+    time_ms++;
+  }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	if (GPIO_Pin == GPIO_PIN_0)
+	{
+		uint8_t f0_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_0);
+		uint8_t f5_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_5);
+		if(f0_state == GPIO_PIN_SET)
+    {
+		  if(f5_state == GPIO_PIN_RESET)
+      {
+        encoder_count[0]++;
+      }
+      else
+      {
+        encoder_count[0]--;
+      }
+    }
+    if (f0_state == GPIO_PIN_RESET)
+    {
+      if (f5_state == GPIO_PIN_RESET)
+      {
+        encoder_count[0]--;
+      }
+      else
+      {
+        encoder_count[0]++;
+      }
+    }
+	}
+  if (GPIO_Pin == GPIO_PIN_1)
+  {
+    uint8_t f1_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_1);
+		uint8_t f6_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_6);
+    if (f1_state == GPIO_PIN_SET)
+    {
+      if (f6_state == GPIO_PIN_RESET)
+      {
+        encoder_count[1]++;
+      }
+      else
+      {
+        encoder_count[1]--;
+      }
+    }
+    if (f1_state == GPIO_PIN_RESET)
+    {
+      if (f6_state == GPIO_PIN_RESET)
+      {
+        encoder_count[1]--;
+      }
+      else
+      {
+        encoder_count[1]++;
+      }
+    } 
+  }
+  if (GPIO_Pin == GPIO_PIN_2)
+  {
+    uint8_t f2_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_2);
+		uint8_t f7_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_7);
+    if (f2_state == GPIO_PIN_SET)
+    {
+      if (f7_state == GPIO_PIN_RESET)
+      {
+        encoder_count[2]++;
+      }
+      else
+      {
+        encoder_count[2]--;
+      }
+    }
+    if (f2_state == GPIO_PIN_RESET)
+    {
+      if (f7_state == GPIO_PIN_RESET)
+      {
+        encoder_count[2]--;
+      }
+      else
+      {
+        encoder_count[2]++;
+      }
+    }
+  }
+  if (GPIO_Pin == GPIO_PIN_3)
+  {
+    uint8_t f3_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_3);
+		uint8_t f8_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_8);
+    if (f3_state == GPIO_PIN_SET)
+    {
+      if (f8_state == GPIO_PIN_RESET)
+      {
+        encoder_count[3]++;
+      }
+      else
+      {
+        encoder_count[3]--;
+      }
+    }
+    if (f3_state == GPIO_PIN_RESET)
+    {
+      if (f8_state == GPIO_PIN_RESET)
+      {
+        encoder_count[3]--;
+      }
+      else
+      {
+        encoder_count[3]++;
+      }
+    }
+  }
+}
+
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart == &huart1)
+  {
+    
+  }
+  
+}
 
 /* USER CODE END 0 */
 
@@ -86,23 +234,46 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TIM1_Init();
+  MX_USART1_UART_Init();
+  MX_TIM4_Init();
+  MX_CAN_Init();
+  MX_TIM8_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
+  // while (KeyNumber == 2)
+  // {
+  //   KeyNumber = Get_KeyNumber();
+  // }
+  
+  HAL_TIM_Base_Start_IT(&htim4);
+  // OLED_Init();
+  Can_Init();
+  DM_Motor_Enable(0x101);
+  HAL_Delay(5);
+  DM_Motor_Enable(0x102);
+  HAL_Delay(5);
+  DM_Motor_Enable(0x103);
+  HAL_Delay(5);
+  DM_Motor_Enable(0x104);
+  HAL_Delay(5);
+  DM_Motor_Enable(0x105);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
+  { 
     /* USER CODE END WHILE */
-	  K1 = KeyPush(K1);
-	  if(K1 == 1)
-	  {
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
-	  }
-	  else{
-		  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
-	  }
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "key.h": "c"
+        "brushed_motor.h": "c",
+        "serial_port.h": "c",
+        "tim.h": "c",
+        "servo.h": "c"
     }
 }

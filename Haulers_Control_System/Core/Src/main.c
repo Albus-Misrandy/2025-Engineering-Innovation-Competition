@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Key.h"
+#include "PS2_JoyStick.h"
 #include "Brushed_Motor.h"
 #include "Serial_Port.h"
 #include "DM_Motor.h"
@@ -61,8 +62,8 @@ float Deg_4 = 0;
 
 int32_t time_ms = 0;
 float DM_motor_rad = 0;
-uint8_t KeyNumber = 2;
 uint8_t serial_num;
+JOYSTICK_TypeDef main_joy;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -240,6 +241,7 @@ int main(void)
   MX_CAN_Init();
   MX_TIM8_Init();
   MX_I2C1_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -249,6 +251,7 @@ int main(void)
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
+
   // while (KeyNumber == 2)
   // {
   //   KeyNumber = Get_KeyNumber();
@@ -272,6 +275,12 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
+    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 500);
+    // PS2_Scanning(&main_joy);
+    // HAL_Delay(30);
+    // uint8_t d = main_joy.mode; 
+    // HAL_UART_Transmit(&huart1, &d, 1, HAL_MAX_DELAY);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

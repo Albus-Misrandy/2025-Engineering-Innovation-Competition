@@ -3,18 +3,18 @@
         {
             "name": "Haulers_Control_System",
             "includePath": [
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Core\\Inc",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\STM32F1xx_HAL_Driver\\Inc\\Legacy",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\CMSIS\\Include",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Hardware",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Auto_PathPlanner",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Core\\Inc",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\STM32F1xx_HAL_Driver\\Inc\\Legacy",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\STM32F1xx_HAL_Driver\\Inc",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\CMSIS\\Include",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Hardware",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Auto_PathPlanner",
                 "D:\\Keil_v5\\ARM\\ARMCC\\include",
                 "D:\\Keil_v5\\ARM\\ARMCC\\include\\rw",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\MDK-ARM",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Core\\Src",
-                "d:\\STM32_HAL\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\STM32F1xx_HAL_Driver\\Src"
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\MDK-ARM",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Core\\Src",
+                "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\Drivers\\STM32F1xx_HAL_Driver\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

@@ -4,5 +4,6 @@
         "serial_port.h": "c",
         "tim.h": "c",
         "servo.h": "c"
-    }
+    },
+    "C_Cpp.default.compilerPath": "e:\\STM32\\F103ZET6\\2025-Engineering-Innovation-Competition\\Haulers_Control_System\\MDK-ARM\\Haulers_Control_System.uvprojx"
 }

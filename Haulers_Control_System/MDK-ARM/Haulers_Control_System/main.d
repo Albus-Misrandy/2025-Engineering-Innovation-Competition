@@ -36,6 +36,7 @@ haulers_control_system\main.o: ../Core/Inc/tim.h
 haulers_control_system\main.o: ../Core/Inc/usart.h
 haulers_control_system\main.o: ../Core/Inc/gpio.h
 haulers_control_system\main.o: ../Hardware/Key.h
+haulers_control_system\main.o: ../Hardware/PS2_JoyStick.h
 haulers_control_system\main.o: ../Hardware/Brushed_Motor.h
 haulers_control_system\main.o: ../Hardware/Serial_Port.h
 haulers_control_system\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

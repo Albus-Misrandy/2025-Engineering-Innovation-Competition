@@ -242,6 +242,7 @@ int main(void)
   MX_TIM8_Init();
   MX_I2C1_Init();
   MX_TIM6_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -251,6 +252,7 @@ int main(void)
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_2);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 
   // while (KeyNumber == 2)
   // {
@@ -275,9 +277,28 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
-    __HAL_TIM_SET_COMPARE(&htim8, TIM_CHANNEL_2, 500);
-    // PS2_Scanning(&main_joy);
-    // HAL_Delay(30);
+    PS2_Scanning(&main_joy);
+    HAL_Delay(30);
+    // uint8_t va = main_joy.LJoy_UD;
+    // HAL_UART_Transmit(&huart1, &va, 1, HAL_MAX_DELAY);
+    if (main_joy.btn2 & (1 << 2))
+    {
+      Set_Servo_Angle(0, 'a');
+      Set_Servo_Angle(0, 'b');
+      Set_Servo_Angle(0, 'c');
+      Set_Servo_Angle(150, 'd');
+      Set_Servo_Angle(130, 'e');
+    }
+    if (main_joy.btn2 & (1 << 0))
+    {
+      Set_Servo_Angle(90, 'b');
+      Set_Servo_Angle(90, 'a');
+      Set_Servo_Angle(90, 'c');
+      Set_Servo_Angle(300, 'd');
+      Set_Servo_Angle(40, 'e');
+    }
+    
+    
     // uint8_t d = main_joy.mode; 
     // HAL_UART_Transmit(&huart1, &d, 1, HAL_MAX_DELAY);
     

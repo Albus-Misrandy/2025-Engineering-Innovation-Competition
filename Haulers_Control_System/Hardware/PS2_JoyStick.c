@@ -1,4 +1,5 @@
 #include "PS2_JoyStick.h"
+#include "Serial_Port.h"
 
 const uint8_t PS2_command[9] = {0x01, 0x42, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 uint8_t PS2_data[9] = {0};

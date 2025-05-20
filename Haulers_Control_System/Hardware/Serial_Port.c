@@ -41,3 +41,10 @@ int Receive_int_data_IT(void)
     memcpy(&receive_value, receive_buf, sizeof(int));
     return receive_value;
 }
+
+void send_float(float value)
+{
+    uint8_t b[4];
+    memcpy(b, &value, sizeof(float));
+    HAL_UART_Transmit(&huart1, b, sizeof(float), HAL_MAX_DELAY);
+}

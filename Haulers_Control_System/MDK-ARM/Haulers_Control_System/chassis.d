@@ -36,3 +36,7 @@ haulers_control_system\chassis.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_
 haulers_control_system\chassis.o: ../Hardware/Brushed_Motor.h
 haulers_control_system\chassis.o: ../Core/Inc/gpio.h
 haulers_control_system\chassis.o: ../Core/Inc/tim.h
+haulers_control_system\chassis.o: ../Hardware/Serial_Port.h
+haulers_control_system\chassis.o: ../Core/Inc/usart.h
+haulers_control_system\chassis.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+haulers_control_system\chassis.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

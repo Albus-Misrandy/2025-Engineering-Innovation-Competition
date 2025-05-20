@@ -109,7 +109,7 @@ float PID_Update(PID_Controller *pid, float current_pos, float target_pos, float
     float derivative = (error - pid->prev_error); // 微分项
     float output = pid->Kp * error + pid->Ki * pid->integral + pid->Kd * derivative;
     pid->prev_error = error;
-	if (error < 50 && error > -50)
+	if (error < 30 && error > -30)
 	{
 		output = 0;
 	}
@@ -123,7 +123,7 @@ void Motor_Control(char Motor_num, float current_pos, float target_pos, float Kp
 	float output = PID_Update(&pid, current_pos, target_pos, Kp, Ki, Kd);
   
 	// 输出限幅（例如±100%占空比）
-	output = (output > 60) ? 60 : (output < -60) ? -60 : output;
+	output = (output > 70) ? 70 : (output < -70) ? -70 : output;
 	//send_16bitsfloat_data(output);
 	int16_t pwm_output = (int16_t)output;
 	

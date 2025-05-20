@@ -10,5 +10,6 @@ void send_32bits_data(int32_t value);
 void send_int_data(int value);
 void send_16bitsfloat_data(float value);
 int Receive_int_data(void);
+void send_float(float value);
 
 #endif

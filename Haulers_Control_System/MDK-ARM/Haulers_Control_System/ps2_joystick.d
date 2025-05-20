@@ -33,3 +33,7 @@ haulers_control_system\ps2_joystick.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32
 haulers_control_system\ps2_joystick.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 haulers_control_system\ps2_joystick.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 haulers_control_system\ps2_joystick.o: ../Core/Inc/tim.h
+haulers_control_system\ps2_joystick.o: ..\Hardware\Serial_Port.h
+haulers_control_system\ps2_joystick.o: ../Core/Inc/usart.h
+haulers_control_system\ps2_joystick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+haulers_control_system\ps2_joystick.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

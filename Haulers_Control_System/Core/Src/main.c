@@ -34,6 +34,7 @@
 #include "Servo.h"
 #include "OledScreen.h"
 #include "chassis.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -55,14 +56,11 @@
 
 /* USER CODE BEGIN PV */
 int16_t encoder_count[4] = {0, 0, 0, 0};
-float Deg_1 = 0;
-float Deg_2 = 0;
-float Deg_3 = 0;
-float Deg_4 = 0;
 
 int32_t time_ms = 0;
 float DM_motor_rad = 0;
-uint8_t serial_num;
+bool key_num = false;
+bool motion_num = false;
 JOYSTICK_TypeDef main_joy;
 /* USER CODE END PV */
 
@@ -165,13 +163,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
       }
     }
   }
-  if (GPIO_Pin == GPIO_PIN_3)
+  if (GPIO_Pin == GPIO_PIN_8)
   {
-    uint8_t f3_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_3);
-		uint8_t f8_state = HAL_GPIO_ReadPin(GPIOF, GPIO_PIN_8);
+    uint8_t f3_state = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_8);
+		uint8_t f4_state = HAL_GPIO_ReadPin(GPIOD, GPIO_PIN_9);
     if (f3_state == GPIO_PIN_SET)
     {
-      if (f8_state == GPIO_PIN_RESET)
+      if (f4_state == GPIO_PIN_RESET)
       {
         encoder_count[3]++;
       }
@@ -182,7 +180,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     }
     if (f3_state == GPIO_PIN_RESET)
     {
-      if (f8_state == GPIO_PIN_RESET)
+      if (f4_state == GPIO_PIN_RESET)
       {
         encoder_count[3]--;
       }
@@ -194,7 +192,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
   }
 }
 
-
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if (huart == &huart1)
@@ -203,6 +200,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   }
   
 }
+
+// void get_d_encoder(void)
+// {
+//   encoder_count[3] = __HAL_TIM_GET_COUNTER(&htim2);
+// }
 
 /* USER CODE END 0 */
 
@@ -243,6 +245,7 @@ int main(void)
   MX_I2C1_Init();
   MX_TIM6_Init();
   MX_TIM3_Init();
+  MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
   HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
@@ -253,22 +256,19 @@ int main(void)
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_3);
   HAL_TIM_PWM_Start(&htim8, TIM_CHANNEL_4);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-
-  // while (KeyNumber == 2)
-  // {
-  //   KeyNumber = Get_KeyNumber();
-  // }
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_1);
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_2);
   
   HAL_TIM_Base_Start_IT(&htim4);
   // OLED_Init();
   Can_Init();
-  DM_Motor_Enable(0x101);
+  DM_Motor_Enable(0x001);
   HAL_Delay(5);
-  DM_Motor_Enable(0x102);
+  DM_Motor_Enable(0x002);
   HAL_Delay(5);
-  DM_Motor_Enable(0x103);
+  DM_Motor_Enable(0x003);
   HAL_Delay(5);
-  DM_Motor_Enable(0x104);
+  DM_Motor_Enable(0x004);
   HAL_Delay(5);
   DM_Motor_Enable(0x105);
   /* USER CODE END 2 */
@@ -279,28 +279,60 @@ int main(void)
   { 
     PS2_Scanning(&main_joy);
     HAL_Delay(30);
-    // uint8_t va = main_joy.LJoy_UD;
-    // HAL_UART_Transmit(&huart1, &va, 1, HAL_MAX_DELAY);
-    if (main_joy.btn2 & (1 << 2))
+    // send_16bitsfloat_data(encoder_count[3]);
+    uint8_t LU = main_joy.LJoy_UD;
+    uint8_t m = main_joy.mode;
+    if (m == 0x73)
     {
-      Set_Servo_Angle(0, 'a');
-      Set_Servo_Angle(0, 'b');
-      Set_Servo_Angle(0, 'c');
-      Set_Servo_Angle(150, 'd');
-      Set_Servo_Angle(130, 'e');
-    }
-    if (main_joy.btn2 & (1 << 0))
-    {
-      Set_Servo_Angle(90, 'b');
-      Set_Servo_Angle(90, 'a');
-      Set_Servo_Angle(90, 'c');
-      Set_Servo_Angle(300, 'd');
-      Set_Servo_Angle(40, 'e');
+      Go_Ahead_Velocity(LU);
+      if (main_joy.btn2 & (1 << 0))
+      {
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+        uint64_t start1 = time_ms;
+        while ((time_ms - start1) < 1200)
+        {
+          Reset_turning(encoder_count);
+        }
+      }
+      if (main_joy.btn2 & (1 << 1))
+      {
+        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_SET);
+        Set_Servo_Angle(40, 'b');
+        Set_Servo_Angle(60, 'a');
+        Set_Servo_Angle(75, 'c');
+        // Set_Servo_Angle(150, 'd');
+      }
+      if (main_joy.btn2 & (1 << 2))
+      {
+        HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+        uint64_t start0 = time_ms;
+        while ((time_ms - start0) < 1200)
+        {
+          Self_Rotation(encoder_count);
+        }
+      }
+      if (main_joy.btn2 & (1 << 3))
+      {
+        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, GPIO_PIN_RESET);
+        Set_Servo_Angle(0, 'a');
+        Set_Servo_Angle(0, 'b');
+        Set_Servo_Angle(0, 'c');
+        // Set_Servo_Angle(150, 'd');
+      }
+      if (main_joy.btn2 & (1 << 6))
+      {
+        key_num = !key_num;
+      }
+      if (key_num == false)
+      {
+        Set_Servo_Angle(130, 'e');
+      }
+      if (key_num == true)
+      {
+        Set_Servo_Angle(50, 'e');
+      }
     }
     
-    
-    // uint8_t d = main_joy.mode; 
-    // HAL_UART_Transmit(&huart1, &d, 1, HAL_MAX_DELAY);
     
     /* USER CODE END WHILE */
 

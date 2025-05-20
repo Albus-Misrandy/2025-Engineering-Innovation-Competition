@@ -45,3 +45,4 @@ haulers_control_system\main.o: ../Hardware/DM_Motor.h
 haulers_control_system\main.o: ../Hardware/Servo.h
 haulers_control_system\main.o: ../Hardware/OledScreen.h
 haulers_control_system\main.o: ../Auto_PathPlanner/chassis.h
+haulers_control_system\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
